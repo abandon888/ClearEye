@@ -19,6 +19,7 @@ import Home from './page/home'
 import SliceAnalyze from './page/sliceAnalyze'
 import SlicePhoto from './page/slicePhoto'
 import PageLayout from './layout'
+import SliceAnalyzeForm from './page/sliceAnalyzeForm'
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/SliceAnalyze" element={<SliceAnalyze />} />
           <Route path="/SlicePhoto" element={<SlicePhoto />} />
+          <Route path="/SliceAnalyzeForm" element={<SliceAnalyzeForm />} />
         </Routes>
       </PageLayout>
     </BrowserRouter>

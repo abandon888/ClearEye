@@ -1,10 +1,12 @@
 import { Button, Form, Modal, Spin } from 'antd'
 import PageUpload from '../component/upload'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function SliceAnalyze() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const nav = useNavigate()
 
   const showModal = () => {
     setIsModalOpen(true)
@@ -12,6 +14,7 @@ export default function SliceAnalyze() {
 
   const handleOk = () => {
     setIsModalOpen(false)
+    nav('/SliceAnalyzeForm')
   }
 
   const handleCancel = () => {
