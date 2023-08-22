@@ -26,9 +26,14 @@ export default function SliceAnalyze() {
   }
   return (
     <>
-      {isLoading == true ? (
-        <Spin />
-      ) : (
+      <Spin
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        size="large"
+        tip="加载中"
+        spinning={isLoading}>
         <Form>
           <Form.Item label="病理切片图片">
             <PageUpload />
@@ -45,8 +50,7 @@ export default function SliceAnalyze() {
             分析
           </Button>
         </Form>
-      )}
-
+      </Spin>
       <Modal
         title="病理切片分析结果"
         open={isModalOpen}
