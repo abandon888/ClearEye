@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PlusOutlined } from '@ant-design/icons'
-import { Modal, Upload } from 'antd'
+import { ConfigProvider, Modal, Upload, message } from 'antd'
 import type { RcFile, UploadProps } from 'antd/es/upload'
 import type { UploadFile } from 'antd/es/upload/interface'
 
@@ -16,26 +16,7 @@ const PageUpload: React.FC = () => {
   const [previewOpen, setPreviewOpen] = useState(false)
   const [previewImage, setPreviewImage] = useState('')
   const [previewTitle, setPreviewTitle] = useState('')
-  const [fileList, setFileList] = useState<UploadFile[]>([
-    {
-      uid: '-1',
-      name: 'image.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-    {
-      uid: '-xxx',
-      percent: 50,
-      name: 'image.png',
-      status: 'uploading',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-    {
-      uid: '-5',
-      name: 'image.png',
-      status: 'error',
-    },
-  ])
+  const [fileList, setFileList] = useState<UploadFile[]>([])
 
   const handleCancel = () => setPreviewOpen(false)
 
@@ -51,25 +32,40 @@ const PageUpload: React.FC = () => {
     )
   }
 
-  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) =>
+  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
     setFileList(newFileList)
+    if (newFileList.length > fileList.length) {
+      message.success('上传成功')
+    }
+  }
 
   const uploadButton = (
     <div>
       <PlusOutlined />
-      <div style={{ marginTop: 8 }}>PageUpload</div>
+      <div style={{ marginTop: 8 }}>上传图片</div>
     </div>
   )
   return (
     <>
-      <Upload
-        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-        listType="picture-circle"
-        fileList={fileList}
-        onPreview={handlePreview}
-        onChange={handleChange}>
-        {fileList.length >= 8 ? null : uploadButton}
-      </Upload>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorError: '#d9d9d9',
+          },
+        }}>
+        <Upload
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          listType="picture-card"
+          fileList={fileList}
+          style={{
+            width: '240px',
+            height: '400px',
+          }}
+          onPreview={handlePreview}
+          onChange={handleChange}>
+          {fileList.length >= 8 ? null : uploadButton}
+        </Upload>
+      </ConfigProvider>
       <Modal
         open={previewOpen}
         title={previewTitle}
