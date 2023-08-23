@@ -12,7 +12,7 @@ const data = [
 
 function Chart1() {
   return (
-    <Chart height={300} autoFit data={data}>
+    <Chart height={80} width={200} autoFit data={data}>
       <Interval
         position="year*sales"
         style={{ lineWidth: 4, stroke: getTheme().colors10[0] }}

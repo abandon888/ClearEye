@@ -50,7 +50,8 @@ function Chart2() {
       <Chart
         appendPadding={[10, 0, 0, 10]}
         autoFit
-        height={500}
+        height={80}
+        width={200}
         data={data}
         onLineClick={console.log}
         scale={{
