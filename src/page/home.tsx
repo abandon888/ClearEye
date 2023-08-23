@@ -1,3 +1,9 @@
+import Chart1 from '../component/chart'
+
 export default function Home() {
-  return <div>Home</div>
+  return (
+    <>
+      <Chart1 />
+    </>
+  )
 }
