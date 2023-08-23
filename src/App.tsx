@@ -14,6 +14,7 @@ import {
   BrowserRouter,
   Link,
   useLocation,
+  Navigate,
 } from 'react-router-dom'
 import Home from './page/home'
 import SliceAnalyze from './page/sliceAnalyze'
@@ -26,6 +27,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <PageLayout>
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/SliceAnalyze" element={<SliceAnalyze />} />
           <Route path="/SlicePhoto" element={<SlicePhoto />} />

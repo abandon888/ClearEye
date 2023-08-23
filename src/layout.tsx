@@ -22,27 +22,29 @@ import SlicePhoto from './page/slicePhoto'
 const { Header, Sider, Content } = Layout
 
 export default function PageLayout(props: { children: React.ReactNode }) {
-  const [collapsed, setCollapsed] = useState(false)
+  // const [collapsed, setCollapsed] = useState(false)
   // const [selectedKeys, setSelectedKeys] = useState(['1'])
   const { pathname } = useLocation()
   const {
     token: { colorBgContainer },
   } = theme.useToken()
+  const [selectedKeys, setSelectedKeys] = useState([pathname])
 
   useEffect(() => {
-    console.log('pathname', pathname)
-  }, [])
+    console.log(pathname)
+    setSelectedKeys([pathname])
+  }, [pathname])
   return (
     <Layout
       style={{
         minHeight: '100vh',
         background: colorBgContainer,
       }}>
-      <Sider trigger={null} collapsible collapsed={collapsed} theme="light">
+      <Sider trigger={null} theme="light">
         <img className="demo-logo-vertical" src={logo} />
         <Menu
           mode="inline"
-          defaultSelectedKeys={[pathname]}
+          defaultSelectedKeys={selectedKeys}
           items={[
             {
               key: '/home',
@@ -81,7 +83,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
+          {/* <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
@@ -90,7 +92,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
               width: 64,
               height: 64,
             }}
-          />
+          /> */}
           <Typography.Text>概述</Typography.Text>
         </Header>
         <Content
