@@ -5,124 +5,74 @@ import { Chart, LineAdvance } from 'bizcharts'
 // 数据源
 const data = [
   {
-    month: 'Jan',
-    city: 'Tokyo',
+    month: '周一',
+    city: '课程一',
     temperature: 7,
   },
   {
-    month: 'Jan',
-    city: 'London',
+    month: '周一',
+    city: '课程二',
     temperature: 3.9,
   },
   {
-    month: 'Feb',
-    city: 'Tokyo',
+    month: '周二',
+    city: '课程一',
     temperature: 13,
   },
   {
-    month: 'Feb',
-    city: 'London',
+    month: '周二',
+    city: '课程二',
     temperature: 4.2,
   },
   {
-    month: 'Mar',
-    city: 'Tokyo',
+    month: '周三',
+    city: '课程一',
     temperature: 16.5,
   },
   {
-    month: 'Mar',
-    city: 'London',
+    month: '周三',
+    city: '课程二',
     temperature: 5.7,
   },
   {
-    month: 'Apr',
-    city: 'Tokyo',
+    month: '周四',
+    city: '课程一',
     temperature: 14.5,
   },
   {
-    month: 'Apr',
-    city: 'London',
+    month: '周四',
+    city: '课程二',
     temperature: 8.5,
   },
   {
-    month: 'May',
-    city: 'Tokyo',
+    month: '周五',
+    city: '课程一',
     temperature: 10,
   },
   {
-    month: 'May',
-    city: 'London',
-    temperature: 11.9,
-  },
-  {
-    month: 'Jun',
-    city: 'Tokyo',
-    temperature: 7.5,
-  },
-  {
-    month: 'Jun',
-    city: 'London',
-    temperature: 15.2,
-  },
-  {
-    month: 'Jul',
-    city: 'Tokyo',
+    month: '周五',
+    city: '课程二',
     temperature: 9.2,
   },
   {
-    month: 'Jul',
-    city: 'London',
-    temperature: 17,
+    month: '周六',
+    city: '课程一',
+    temperature: 6.6,
   },
   {
-    month: 'Aug',
-    city: 'Tokyo',
-    temperature: 14.5,
+    month: '周六',
+    city: '课程二',
+    temperature: 9.5,
   },
   {
-    month: 'Aug',
-    city: 'London',
-    temperature: 16.6,
+    month: '周日',
+    city: '课程一',
+    temperature: 12,
   },
   {
-    month: 'Sep',
-    city: 'Tokyo',
-    temperature: 9.3,
-  },
-  {
-    month: 'Sep',
-    city: 'London',
-    temperature: 14.2,
-  },
-  {
-    month: 'Oct',
-    city: 'Tokyo',
-    temperature: 8.3,
-  },
-  {
-    month: 'Oct',
-    city: 'London',
-    temperature: 10.3,
-  },
-  {
-    month: 'Nov',
-    city: 'Tokyo',
-    temperature: 8.9,
-  },
-  {
-    month: 'Nov',
-    city: 'London',
-    temperature: 5.6,
-  },
-  {
-    month: 'Dec',
-    city: 'Tokyo',
-    temperature: 5.6,
-  },
-  {
-    month: 'Dec',
-    city: 'London',
-    temperature: 9.8,
+    month: '周日',
+    city: '课程二',
+    temperature: 4.8,
   },
 ]
 
@@ -135,7 +85,16 @@ function Chart4() {
         autoFit
         height={280}
         width={750}
-        data={data}>
+        data={data}
+        scale={{
+          city: {
+            alias: '测试项目',
+          },
+          temperature: {
+            min: 0,
+            alias: '测试时长',
+          },
+        }}>
         <LineAdvance
           shape="smooth"
           point

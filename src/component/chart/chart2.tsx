@@ -6,42 +6,13 @@ console.log(getTheme())
 
 // 数据源
 const data = [
-  {
-    year: '1991',
-    value: 3,
-  },
-  {
-    year: '1992',
-    value: 4,
-  },
-  {
-    year: '1993',
-    value: 3.5,
-  },
-  {
-    year: '1994',
-    value: 5,
-  },
-  {
-    year: '1995',
-    value: 4.9,
-  },
-  {
-    year: '1996',
-    value: 6,
-  },
-  {
-    year: '1997',
-    value: 7,
-  },
-  {
-    year: '1998',
-    value: 9,
-  },
-  {
-    year: '1999',
-    value: 13,
-  },
+  { year: '周一', value: 2 },
+  { year: '周二', value: 52 },
+  { year: '周三', value: 61 },
+  { year: '周四', value: 45 },
+  { year: '周五', value: 48 },
+  { year: '周六', value: 38 },
+  { year: '周日', value: 19 },
 ]
 
 function Chart2() {
@@ -55,12 +26,12 @@ function Chart2() {
         data={data}
         onLineClick={console.log}
         scale={{
-          value: { min: 0, alias: '人均年收入', type: 'linear-strict' },
+          value: { min: 0, alias: '排名', type: 'linear-strict' },
           year: { range: [0, 1] },
         }}>
-        <Line position="year*value" />
+        <Line position="year*value" color="#089479" size={6} />
         <Point position="year*value" />
-        <Tooltip showCrosshairs follow={false} />
+        <Tooltip />
       </Chart>
     </>
   )
