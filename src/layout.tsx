@@ -5,7 +5,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons'
-import { Layout, Menu, Button, theme, Typography } from 'antd'
+import { Layout, Menu, Button, theme, Typography, Input } from 'antd'
 import logo from './assets/logo.png'
 import {
   Routes,
@@ -83,17 +83,18 @@ export default function PageLayout(props: { children: React.ReactNode }) {
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>
-          {/* <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          /> */}
-          <Typography.Text>概述</Typography.Text>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Typography.Title level={4}>
+              AI病理诊断学习一体化平台
+            </Typography.Title>
+            <Input.Search
+              placeholder="搜索"
+              width={20}
+              style={{
+                maxWidth: '200px',
+                marginLeft: '50vw',
+              }}></Input.Search>
+          </div>
         </Header>
         <Content
           style={{
