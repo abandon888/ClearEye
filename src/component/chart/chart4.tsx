@@ -130,14 +130,12 @@ function Chart4() {
   return (
     <>
       {' '}
-      <h1>1111</h1>
       <Chart
         padding={[10, 20, 50, 40]}
         autoFit
-        height={325}
-        width={800}
+        height={300}
+        width={750}
         data={data}>
-        <h1>1111</h1>
         <LineAdvance
           shape="smooth"
           point

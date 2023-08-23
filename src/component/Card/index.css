@@ -13,6 +13,8 @@
 }
 
 .card-large {
+  width: 800px;
+  height: 325px;
 }
 
 .cardTitle {

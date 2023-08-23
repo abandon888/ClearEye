@@ -23,7 +23,14 @@ export default function Home() {
           <Chart3 />
         </Card>
       </div>
-      <Chart4 />
+      <div
+        style={{
+          marginTop: '20px',
+        }}>
+        <Card title="学习任务完成度" size="large" largeText="测试">
+          <Chart4 />
+        </Card>
+      </div>
     </>
   )
 }
