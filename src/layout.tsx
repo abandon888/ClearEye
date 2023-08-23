@@ -5,7 +5,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons'
-import { Layout, Menu, Button, theme, Typography, Input } from 'antd'
+import { Layout, Menu, Button, theme, Typography, Input, Card } from 'antd'
 import logo from './assets/logo.png'
 import {
   Routes,
@@ -18,6 +18,7 @@ import {
 import Home from './page/home'
 import SliceAnalyze from './page/sliceAnalyze'
 import SlicePhoto from './page/slicePhoto'
+import avator from './assets/avator.png'
 
 const { Header, Sider, Content } = Layout
 
@@ -80,6 +81,18 @@ export default function PageLayout(props: { children: React.ReactNode }) {
             },
           ]}
         />
+        <Card className="fixed top-[60vh]">
+          <img src={avator} alt="#" className="relative bottom-[-20px]" />
+          <Typography.Title level={5}>NCU医学生小明</Typography.Title>
+          <Typography.Text disabled>2021级</Typography.Text>
+          <Typography.Paragraph>
+            <Typography.Text disabled>专业：</Typography.Text>
+            <Typography.Text>临床医学</Typography.Text>
+          </Typography.Paragraph>
+          <Button type="primary" style={{ marginLeft: '20px' }}>
+            查看个人信息
+          </Button>
+        </Card>
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>

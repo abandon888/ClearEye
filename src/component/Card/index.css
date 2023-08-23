@@ -9,7 +9,7 @@
 
 .card-small {
   width: 250px;
-  height: 150px;
+  /*height: 150px;*/
 }
 
 .card-large {
@@ -36,4 +36,5 @@
   letter-spacing: 0.08px;
   line-height: 28px;
   color: rgba(32, 59, 84, 1);
+  z-index: 99;
 }
