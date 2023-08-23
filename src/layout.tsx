@@ -6,7 +6,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, Button, theme, Typography, Input, Card } from 'antd'
-import logo from './assets/logo.png'
+import logo from './assets/Logo.png'
 import {
   Routes,
   Route,
