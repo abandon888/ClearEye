@@ -4,6 +4,10 @@ import App from './App.tsx'
 import './index.css'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
+import 'moment/dist/locale/zh-cn'
+import moment from 'moment'
+
+moment.locale('zh-cn')
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

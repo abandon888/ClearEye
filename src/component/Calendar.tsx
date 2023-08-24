@@ -3,6 +3,8 @@ import React from 'react'
 import { Calendar, theme } from 'antd'
 import type { CalendarProps } from 'antd'
 
+import locale from 'antd/lib/calendar/locale/zh_CN.js'
+
 const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
   console.log(value.format('YYYY-MM-DD'), mode)
 }
@@ -21,7 +23,11 @@ const PageCalendar: React.FC = () => {
 
   return (
     <div style={wrapperStyle}>
-      <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+      <Calendar
+        fullscreen={false}
+        onPanelChange={onPanelChange}
+        locale={locale}
+      />
     </div>
   )
 }

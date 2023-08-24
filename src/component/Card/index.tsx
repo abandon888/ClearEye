@@ -38,7 +38,7 @@ export default function Card({
               defaultValue={largeText}
               options={[{ value: '测试', label: '测试' }]}
               style={{
-                marginLeft: '400px',
+                marginLeft: '380px',
               }}></Select>
           )}
         </div>
