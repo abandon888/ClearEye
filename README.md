@@ -1,27 +1,69 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>医目了然：AI病理诊断学习一体化平台</h1>
 
-Currently, two official plugins are available:
+**个人学习练手项目**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <a href="#总览">总览</a>  • <a href="#安装">安装</a> • <a href="#使用说明">使用说明</a> • <a href="#开源许可">开源许可</a>
+<br>
+</p>
 
-## Expanding the ESLint configuration
+<p align="center">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<a href='https://bmtrain.readthedocs.io/en/latest/?badge=latest'>
+    <img src='https://readthedocs.org/projects/bmtrain/badge/?version=latest' alt='Documentation Status' />
+</a>
 
-- Configure the top-level `parserOptions` property like this:
+<a href="https://github.com/OpenBMB/BMTrain/blob/main/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/OpenBMB/BMTrain">
+</a>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+</p>
+
+</div>
+
+<div id="总览"></div>
+
+## 总览
+
+医目了然是 2023 年第十四届互联网+大赛国赛铜奖获奖项目，旨在为医学影像 AI 病理诊断提供一个学习一体化平台。
+预览链接如下：[医目了然平台](http://medicine.ncuos.com/)
+
+<div id="文档"></div>
+
+<div id="安装"></div>
+
+## 安装
+
+使用 git 克隆本项目到本地：
+
+```shell
+git clone https://github.com/abandon888/ClearEye.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+再使用 npm 安装依赖(请确保已安装 node 且版本不低于 16.8.0)：
+
+```shell
+npm install
+```
+
+安装完成后，使用 npm 启动项目：
+
+```shell
+npm run dev
+```
+
+项目启动后，打开浏览器访问 <http://localhost:5173> 即可。
+
+<div id="使用说明"></div>
+
+## 使用说明
+
+本平台基于 React 框架开发，使用了 Ant Design 组件库，使用了 zustand 框架进行状态管理，使用了 react-router-dom 框架进行路由管理,css 部分穿插使用了 tailwind CSS 框架。
+
+> 请注意，本项目仅为展示使用，不包含任何后端代码或实质性功能，因此无法进行上传图片和登录等操作。
+
+## 开源许可
+
+该平台使用[Apache 2.0](https://github.com/OpenBMB/BMTrain/blob/main/LICENSE)开源许可证。
