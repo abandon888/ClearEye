@@ -12,10 +12,11 @@ const onFinishFailed = (errorInfo: any) => {
 type FieldType = {
   username?: string
   password?: string
+  telephone?: string
   remember?: string
 }
 
-const Login: React.FC = () => (
+const Register: React.FC = () => (
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -33,29 +34,39 @@ const Login: React.FC = () => (
     </Form.Item>
 
     <Form.Item<FieldType>
+      label="Telephone"
+      name="telephone"
+      //使用正则表达式验证手机号
+      rules={[
+        { required: true, message: 'Please input your telephone!' },
+        {
+          pattern: /^1[3456789]\d{9}$/,
+          message: 'Please input correct telephone!',
+        },
+      ]}>
+      <Input />
+    </Form.Item>
+
+    <Form.Item<FieldType>
       label="Password"
       name="password"
       rules={[{ required: true, message: 'Please input your password!' }]}>
       <Input.Password />
     </Form.Item>
 
-    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <Form.Item<FieldType> name="remember" valuePropName="checked" noStyle>
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-      <a className="ml-[48px]" href="/forget">
-        Forgot password?
-      </a>
+    <Form.Item<FieldType>
+      label="Password"
+      name="password"
+      rules={[{ required: true, message: 'Please confirm your password!' }]}>
+      <Input.Password />
     </Form.Item>
+
     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
       <Button type="primary" htmlType="submit">
         Submit
       </Button>
-      <a href="/register" className="ml-[60px]">
-        Don't have an account? register now!
-      </a>
     </Form.Item>
   </Form>
 )
 
-export default Login
+export default Register

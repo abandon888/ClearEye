@@ -22,6 +22,7 @@ import SlicePhoto from './page/slicePhoto'
 import PageLayout from './layout'
 import SliceAnalyzeForm from './page/sliceAnalyzeForm'
 import Login from './page/login'
+import Register from './page/register'
 
 const App: React.FC = () => {
   return (
@@ -29,8 +30,10 @@ const App: React.FC = () => {
       <PageLayout>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+
           <Route path="/SliceAnalyze" element={<SliceAnalyze />} />
           <Route path="/SlicePhoto" element={<SlicePhoto />} />
           <Route path="/SliceAnalyzeForm" element={<SliceAnalyzeForm />} />
