@@ -26,6 +26,7 @@ export default function PageLayout(props: { children: React.ReactNode }) {
   // const [collapsed, setCollapsed] = useState(false)
   // const [selectedKeys, setSelectedKeys] = useState(['1'])
   const { pathname } = useLocation()
+  const nav = useNavigate()
   const {
     token: { colorBgContainer },
   } = theme.useToken()
@@ -89,7 +90,12 @@ export default function PageLayout(props: { children: React.ReactNode }) {
             <Typography.Text disabled>专业：</Typography.Text>
             <Typography.Text>临床医学</Typography.Text>
           </Typography.Paragraph>
-          <Button type="primary" style={{ marginLeft: '20px' }}>
+          <Button
+            type="primary"
+            style={{ marginLeft: '20px' }}
+            onClick={() => {
+              nav('/login')
+            }}>
             查看个人信息
           </Button>
         </Card>

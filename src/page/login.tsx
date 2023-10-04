@@ -15,7 +15,7 @@ type FieldType = {
   remember?: string
 }
 
-const App: React.FC = () => (
+const Login: React.FC = () => (
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -54,4 +54,4 @@ const App: React.FC = () => (
   </Form>
 )
 
-export default App
+export default Login

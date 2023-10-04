@@ -21,12 +21,14 @@ import SliceAnalyze from './page/sliceAnalyze'
 import SlicePhoto from './page/slicePhoto'
 import PageLayout from './layout'
 import SliceAnalyzeForm from './page/sliceAnalyzeForm'
+import Login from './page/login'
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <PageLayout>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/SliceAnalyze" element={<SliceAnalyze />} />
